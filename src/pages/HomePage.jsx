@@ -4,10 +4,12 @@ import { Spinner } from 'components/Spinner/Spinner';
 
 export const HomePage = () => {
   const [pokemonName, setPokemonName] = useState('');
-  const { data, error, isLoading, isFetching, isError } =
-    useGetPokemonByNameQuery(pokemonName, {
+  const { data, error, isFetching, isError } = useGetPokemonByNameQuery(
+    pokemonName,
+    {
       skip: pokemonName === '',
-    });
+    }
+  );
 
   const handleSubmit = e => {
     e.preventDefault();
